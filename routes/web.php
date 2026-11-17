@@ -26,3 +26,9 @@ Route::delete('/students/{student}', function (Student $student) {
     $student->delete();
     return back();
 })->name('students.destroy');
+
+Route::get('/run-migrate', function () {
+    abort_unless(request('key') === 'temp123', 403);
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    return nl2br(\Illuminate\Support\Facades\Artisan::output());
+});
