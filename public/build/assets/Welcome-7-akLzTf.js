@@ -1,0 +1,1 @@
+import{j as e,S as s}from"./app-C36MLR_W.js";function i({auth:t,laravelVersion:l,phpVersion:r}){return e.jsxs(e.Fragment,{children:[e.jsx(s,{title:"Welcome"}),e.jsx("div",{className:"flex items-center justify-between flex-col w-full h-screen",children:e.jsx("h1",{children:"Student"})})]})}export{i as default};

@@ -1,0 +1,40 @@
+{
+  "resources/fonts/Geist.woff2": {
+    "file": "assets/Geist-BZYDbtPc.woff2",
+    "src": "resources/fonts/Geist.woff2"
+  },
+  "resources/js/Pages/Students.jsx": {
+    "file": "assets/Students-CJe4oNg2.js",
+    "name": "Students",
+    "src": "resources/js/Pages/Students.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Welcome.jsx": {
+    "file": "assets/Welcome-7-akLzTf.js",
+    "name": "Welcome",
+    "src": "resources/js/Pages/Welcome.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-C36MLR_W.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Students.jsx",
+      "resources/js/Pages/Welcome.jsx"
+    ],
+    "css": [
+      "assets/app-DSEAUcyW.css"
+    ],
+    "assets": [
+      "assets/Geist-BZYDbtPc.woff2"
+    ]
+  }
+}

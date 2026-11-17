@@ -1,18 +1,28 @@
 <?php
 
+use App\Models\Student;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/', function () {
+    return Inertia::render('Students', [
+        'students' => Student::latest()->get(),
+    ]);
+})->name('students.index');
 
-Route::get('/', fn () => Inertia::render('Welcome'));
-//git remote add origin https://github.com/m-angel21/student-register.git
+Route::post('/students', function (Request $request) {
+    $validated = $request->validate([
+        'full_name'  => 'required|string|max:120',
+        'reg_number' => 'required|string|max:50|unique:students,reg_number',
+        'program'    => 'required|string|max:100',
+    ]);
+
+    Student::create($validated);
+    return back();
+})->name('students.store');
+
+Route::delete('/students/{student}', function (Student $student) {
+    $student->delete();
+    return back();
+})->name('students.destroy');
